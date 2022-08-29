@@ -10,8 +10,8 @@ import java.util.stream.Collectors;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
-    private final CustomerMapper customerMapper;
-    private final CustomerRepository customerRepository;
+    private CustomerMapper customerMapper;
+    private CustomerRepository customerRepository;
 
     public CustomerServiceImpl(CustomerMapper customerMapper, CustomerRepository customerRepository) {
         this.customerMapper = customerMapper;
