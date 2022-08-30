@@ -6,11 +6,10 @@ import com.spring.restwebmvc.services.CategoryService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+//@Controller
+@RestController
 @RequestMapping(CategoryController.BASE_URL)
 public class CategoryController {
     private final CategoryService categoryService;
@@ -20,16 +19,28 @@ public class CategoryController {
         this.categoryService = categoryService;
     }
 
+//    @GetMapping
+//    public ResponseEntity<CategoryListDTO> getAllCategories(){
+//        return new ResponseEntity<CategoryListDTO>(
+//                new CategoryListDTO(categoryService.getAllCategories()),
+//                HttpStatus.OK
+//        );
+//    }
+
     @GetMapping
-    public ResponseEntity<CategoryListDTO> getAllCategories(){
-        return new ResponseEntity<CategoryListDTO>(
-                new CategoryListDTO(categoryService.getAllCategories()),
-                HttpStatus.OK
-        );
+    @ResponseStatus(HttpStatus.OK)
+    public CategoryListDTO getAllCategories(){
+        return new CategoryListDTO(categoryService.getAllCategories());
     }
 
+//    @GetMapping("/{name}")
+//    public ResponseEntity<CategoryDTO> getCategoryName(@PathVariable String name){
+//        return new ResponseEntity<CategoryDTO>(categoryService.getCategoryByName(name), HttpStatus.OK);
+//    }
+
     @GetMapping("/{name}")
-    public ResponseEntity<CategoryDTO> getCategoryName(@PathVariable String name){
-        return new ResponseEntity<CategoryDTO>(categoryService.getCategoryByName(name), HttpStatus.OK);
+    @ResponseStatus(HttpStatus.OK)
+    public CategoryDTO getCategoryName(@PathVariable String name){
+        return categoryService.getCategoryByName(name);
     }
 }
