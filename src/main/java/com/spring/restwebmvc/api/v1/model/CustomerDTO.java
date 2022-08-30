@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CustomerDTO {
-    @ApiModelProperty(name = "Firstname of Customer", required = true)
+    @ApiModelProperty(value = "Firstname of Customer", required = true)
     private String firstname;
     private String lastname;
     @JsonProperty("customer_url")
