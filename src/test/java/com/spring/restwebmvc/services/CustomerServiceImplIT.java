@@ -1,12 +1,12 @@
 package com.spring.restwebmvc.services;
 
-import com.spring.restwebmvc.api.v1.mapper.CategoryMapper;
 import com.spring.restwebmvc.api.v1.mapper.CustomerMapper;
 import com.spring.restwebmvc.api.v1.model.CustomerDTO;
 import com.spring.restwebmvc.bootstrap.Bootstrap;
 import com.spring.restwebmvc.domain.Customer;
 import com.spring.restwebmvc.repository.CategoryRepository;
 import com.spring.restwebmvc.repository.CustomerRepository;
+import com.spring.restwebmvc.repository.VendorRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +28,9 @@ public class CustomerServiceImplIT {
     @Autowired
     CategoryRepository categoryRepository;
 
+    @Autowired
+    VendorRepository vendorRepository;
+
     CustomerService customerService;
 
     @BeforeEach
@@ -35,7 +38,7 @@ public class CustomerServiceImplIT {
         System.out.println("Loading customer data");
         System.out.println(customerRepository.findAll().size());
 
-        Bootstrap bootstrap = new Bootstrap(categoryRepository, customerRepository);
+        Bootstrap bootstrap = new Bootstrap(categoryRepository, customerRepository, vendorRepository);
         bootstrap.run();
 
         customerService = new CustomerServiceImpl(CustomerMapper.INSTANCE, customerRepository);
