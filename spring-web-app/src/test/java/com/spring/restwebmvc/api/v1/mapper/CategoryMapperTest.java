@@ -5,6 +5,8 @@ import com.spring.restwebmvc.domain.Category;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class CategoryMapperTest {
 
     public static final long ID = 1L;
