@@ -106,7 +106,7 @@ class CustomerControllerTest {
                         .content(asJsonString(customer)))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.firstname", equalTo("Fred")))
-                .andExpect(jsonPath("$.customer_url", equalTo(CustomerController.BASE_URL + "/1")));
+                .andExpect(jsonPath("$.customerUrl", equalTo(CustomerController.BASE_URL + "/1")));
 
     }
     @Test
@@ -131,7 +131,7 @@ class CustomerControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.firstname", equalTo("Fred")))
                 .andExpect(jsonPath("$.lastname", equalTo("Flintstone")))
-                .andExpect(jsonPath("$.customer_url", equalTo(CustomerController.BASE_URL + "/1")));
+                .andExpect(jsonPath("$.customerUrl", equalTo(CustomerController.BASE_URL + "/1")));
     }
 
     @Test
@@ -155,7 +155,7 @@ class CustomerControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.firstname", equalTo("Fred")))
                 .andExpect(jsonPath("$.lastname", equalTo("Flintstone")))
-                .andExpect(jsonPath("$.customer_url", equalTo(CustomerController.BASE_URL + "/1")));
+                .andExpect(jsonPath("$.customerUrl", equalTo(CustomerController.BASE_URL + "/1")));
     }
 
     @Test
