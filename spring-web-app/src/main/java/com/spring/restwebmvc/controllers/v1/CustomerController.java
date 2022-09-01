@@ -6,10 +6,9 @@ import com.spring.restwebmvc.services.CustomerService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping(CustomerController.BASE_URL)
 public class CustomerController {
     private final CustomerService customerService;
