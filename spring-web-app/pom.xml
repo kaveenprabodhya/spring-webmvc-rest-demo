@@ -8,10 +8,6 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>spring-web-app</artifactId>
     <packaging>jar</packaging>
-    <properties>
-        <org.mapstruct.version>1.5.2.Final</org.mapstruct.version>
-        <org.lombok.version>1.18.24</org.lombok.version>
-    </properties>
     <name>spring-web-app</name>
     <dependencies>
         <dependency>
