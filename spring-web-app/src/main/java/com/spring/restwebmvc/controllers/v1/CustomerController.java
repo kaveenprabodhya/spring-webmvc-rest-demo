@@ -21,6 +21,7 @@ public class CustomerController {
 
     @ApiOperation(value = "This will get a list of customers.", notes = "There some notes about the API.")
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public CustomerListDTO getListOfCustomers(){
         CustomerListDTO customerListDTO = new CustomerListDTO();
         customerListDTO.getCustomers().addAll(customerService.getAllCustomers());
@@ -28,26 +29,31 @@ public class CustomerController {
     }
 
     @GetMapping({"/{id}"})
+    @ResponseStatus(HttpStatus.OK)
     public CustomerDTO getCustomerById(@PathVariable Long id){
         return customerService.getCustomerById(id);
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public CustomerDTO createNewCustomer(@RequestBody CustomerDTO customerDTO){
         return customerService.createNewCustomer(customerDTO);
     }
 
     @PutMapping({"/{id}"})
+    @ResponseStatus(HttpStatus.OK)
     public CustomerDTO updateCustomer(@PathVariable Long id, @RequestBody CustomerDTO customerDTO){
         return customerService.saveCustomerByDTO(id, customerDTO);
     }
 
     @PatchMapping({"/{id}"})
+    @ResponseStatus(HttpStatus.OK)
     public CustomerDTO patchCustomer(@PathVariable Long id, @RequestBody CustomerDTO customerDTO){
         return customerService.patchCustomer(id, customerDTO);
     }
 
     @DeleteMapping({"/{id}"})
+    @ResponseStatus(HttpStatus.OK)
     public void deleteCustomer(@PathVariable Long id){
         customerService.deleteCustomerById(id);
     }
