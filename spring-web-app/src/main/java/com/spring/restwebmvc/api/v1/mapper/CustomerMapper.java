@@ -1,6 +1,6 @@
 package com.spring.restwebmvc.api.v1.mapper;
 
-import com.spring.restwebmvc.api.v1.model.CustomerDTO;
+import com.spring.model.CustomerDTO;
 import com.spring.restwebmvc.domain.Customer;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

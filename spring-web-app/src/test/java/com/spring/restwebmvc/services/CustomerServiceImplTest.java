@@ -1,7 +1,7 @@
 package com.spring.restwebmvc.services;
 
+import com.spring.model.CustomerDTO;
 import com.spring.restwebmvc.api.v1.mapper.CustomerMapper;
-import com.spring.restwebmvc.api.v1.model.CustomerDTO;
 import com.spring.restwebmvc.domain.Customer;
 import com.spring.restwebmvc.repository.CustomerRepository;
 import org.junit.jupiter.api.BeforeEach;

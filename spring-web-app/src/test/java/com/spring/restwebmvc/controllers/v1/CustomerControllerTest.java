@@ -1,6 +1,6 @@
 package com.spring.restwebmvc.controllers.v1;
 
-import com.spring.restwebmvc.api.v1.model.CustomerDTO;
+import com.spring.model.CustomerDTO;
 import com.spring.restwebmvc.services.CustomerService;
 import com.spring.restwebmvc.services.ResourceNotFoundException;
 import org.junit.jupiter.api.BeforeEach;

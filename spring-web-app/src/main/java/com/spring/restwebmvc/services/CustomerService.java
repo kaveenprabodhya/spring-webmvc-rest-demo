@@ -1,6 +1,6 @@
 package com.spring.restwebmvc.services;
 
-import com.spring.restwebmvc.api.v1.model.CustomerDTO;
+import com.spring.model.CustomerDTO;
 
 import java.util.List;
 
